@@ -2,3 +2,8 @@ name: my-ci
 
 # On déclenche le workflow sur tout push sur la branch courante
 on: [push]
+jobs: 
+  build-deploy-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
