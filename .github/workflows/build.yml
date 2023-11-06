@@ -1,1 +1,4 @@
 name: my-ci
+
+# On déclenche le workflow sur tout push sur la branch courante
+on: [push]
