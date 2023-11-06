@@ -8,7 +8,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: ls
+      - uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_NAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - uses: docker/build-push-action@v5
         with:
           push: true
-          tags: qepina24/getting-started:latest
+          tags: ${{ secrets.DOCKERHUB_NAME }}/getting-started:latest
